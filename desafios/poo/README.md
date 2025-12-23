@@ -27,32 +27,44 @@ Com base no vídeo de lançamento do iPhone de 2007 (link abaixo), você deve el
 1. Criar um diagrama UML que represente as funcionalidades descritas acima.
 2. Implementar as classes e interfaces correspondentes em Java (Opcional).
 
-### Exemplo de Diagrama UML (Mermaid)
+## 📱 Solução do Desafio: Modelagem iPhone
+
+Esta seção apresenta a resolução da modelagem UML e a estrutura de classes proposta para o componente iPhone.
+
+### 1. Diagrama UML (Mermaid)
+Abaixo está o diagrama representando a classe `iPhone` implementando as interfaces de Reprodutor Musical, Aparelho Telefônico e Navegador.
+
 ```mermaid
 classDiagram
     class ReprodutorMusical {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        <<interface>>
+        +tocar()
+        +pausar()
+        +selecionarMusica(String musica)
     }
 
     class AparelhoTelefonico {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        <<interface>>
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
     }
 
     class NavegadorInternet {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        <<interface>>
+        +exibirPagina(String url)
+        +adicionarNovaAba()
+        +atualizarPagina()
     }
 
     class iPhone {
     }
 
-    iPhone --> ReprodutorMusical
-    iPhone --> AparelhoTelefonico
-    iPhone --> NavegadorInternet
-```
+    iPhone ..|> ReprodutorMusical : implementa
+    iPhone ..|> AparelhoTelefonico : implementa
+    iPhone ..|> NavegadorInternet : implementa
 
+```
 ### Instruções
 1. Assista ao vídeo do lançamento do iPhone para entender as funcionalidades principais.
 2. Utilize uma ferramenta UML de sua preferência para criar o diagrama das classes e interfaces. Você pode utilizar o modelo acima (criado na sintaxe [Mermaid](https://mermaid.js.org/)), uma alternativa open-source e compatível com arquivos Markdown como este.
